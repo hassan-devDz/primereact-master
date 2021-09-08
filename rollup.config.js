@@ -16,30 +16,30 @@ let entries = [];
 
 // alias entries
 const ALIAS_ENTRIES = [
-    { find: '../api/Api', replacement: 'primereact/api' },
-    { find: '../terminalservice/TerminalService', replacement: 'primereact/terminalservice' },
-    { find: '../virtualscroller/VirtualScroller', replacement: 'primereact/virtualscroller' },
-    { find: '../button/Button', replacement: 'primereact/button' },
-    { find: '../inputtext/InputText', replacement: 'primereact/inputtext' },
-    { find: '../paginator/Paginator', replacement: 'primereact/paginator' },
-    { find: '../messages/Messages', replacement: 'primereact/messages' },
-    { find: '../progressbar/ProgressBar', replacement: 'primereact/progressbar' },
-    { find: '../checkox/Checkbox', replacement: 'primereact/checkbox' },
-    { find: '../dropdown/Dropdown', replacement: 'primereact/dropdown' },
-    { find: '../tree/Tree', replacement: 'primereact/tree' },
-    { find: '../dialog/Dialog', replacement: 'primereact/dialog' }
+    { find: '../api/Api', replacement: 'primereact_test/api' },
+    { find: '../terminalservice/TerminalService', replacement: 'primereact_test/terminalservice' },
+    { find: '../virtualscroller/VirtualScroller', replacement: 'primereact_test/virtualscroller' },
+    { find: '../button/Button', replacement: 'primereact_test/button' },
+    { find: '../inputtext/InputText', replacement: 'primereact_test/inputtext' },
+    { find: '../paginator/Paginator', replacement: 'primereact_test/paginator' },
+    { find: '../messages/Messages', replacement: 'primereact_test/messages' },
+    { find: '../progressbar/ProgressBar', replacement: 'primereact_test/progressbar' },
+    { find: '../checkox/Checkbox', replacement: 'primereact_test/checkbox' },
+    { find: '../dropdown/Dropdown', replacement: 'primereact_test/dropdown' },
+    { find: '../tree/Tree', replacement: 'primereact_test/tree' },
+    { find: '../dialog/Dialog', replacement: 'primereact_test/dialog' }
 ];
 
 const ALIAS_COMPONENT_ENTRIES = [
     ...ALIAS_ENTRIES,
     ...[
-        { find: '../ripple/Ripple', replacement: 'primereact/core' },
-        { find: '../utils/Utils', replacement: 'primereact/core' },
-        { find: '../tooltip/Tooltip', replacement: 'primereact/core' },
-        { find: '../keyfilter/KeyFilter', replacement: 'primereact/core' },
-        { find: '../overlayservice/OverlayService', replacement: 'primereact/core' },
-        { find: '../csstransition/CSSTransition', replacement: 'primereact/core' },
-        { find: '../portal/Portal', replacement: 'primereact/core' }
+        { find: '../ripple/Ripple', replacement: 'primereact_test/core' },
+        { find: '../utils/Utils', replacement: 'primereact_test/core' },
+        { find: '../tooltip/Tooltip', replacement: 'primereact_test/core' },
+        { find: '../keyfilter/KeyFilter', replacement: 'primereact_test/core' },
+        { find: '../overlayservice/OverlayService', replacement: 'primereact_test/core' },
+        { find: '../csstransition/CSSTransition', replacement: 'primereact_test/core' },
+        { find: '../portal/Portal', replacement: 'primereact_test/core' }
     ]
 ];
 
@@ -128,8 +128,8 @@ const PLUGINS_CORE = [
 ];
 
 function addEntry(name, input, output, isComponent = true) {
-    const exports = name === 'primereact.api' || name === 'primereact' ? 'named' : 'auto';
-    const isCore = name === 'primereact.core';
+    const exports = name === 'primereact_test.api' || name === 'primereact_test' ? 'named' : 'auto';
+    const isCore = name === 'primereact_test.core';
     const plugins = isComponent ? PLUGINS_COMPONENT : (isCore ? PLUGINS_CORE : PLUGINS);
     const external = isComponent ? EXTERNAL_COMPONENT : (isCore ? EXTERNAL_CORE : EXTERNAL);
     const inlineDynamicImports = true;
@@ -194,20 +194,20 @@ function addComponent() {
                     const input = INPUT_DIR + folderName + '/' + file;
                     const output = OUTPUT_DIR + folderName + '/' + name;
 
-                    addEntry('primereact.' + folderName, input, output, folderName !== 'core');
+                    addEntry('primereact_test.' + folderName, input, output, folderName !== 'core');
                 }
             });
         });
 }
 
-function addPrimeReact() {
-    const input = INPUT_DIR + 'primereact.all.js';
-    const output = OUTPUT_DIR + 'primereact.all';
+function addPrimeReact_test() {
+    const input = INPUT_DIR + 'primereact_test.all.js';
+    const output = OUTPUT_DIR + 'primereact_test.all';
 
-    addEntry('primereact', input, output, false);
+    addEntry('primereact_test', input, output, false);
 }
 
 addComponent();
-addPrimeReact();
+addPrimeReact_test();
 
 export default entries;

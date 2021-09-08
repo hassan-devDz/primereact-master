@@ -1,15 +1,13 @@
 {
-    "name": "primereact",
+    "name": "primereact_test",
     "version": "7.0.0",
-    "homepage": "https://www.primefaces.org/primereact",
+    "homepage": "https://github.com/hassan-devDz/primereact-master",
     "repository": {
-      "type": "git",
-      "url": "https://github.com/primefaces/primereact.git"
+        "type": "git",
+        "url": "https://github.com/hassan-devDz/primereact-master.git"
     },
     "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/primefaces/primereact/issues"
-    },
+
     "keywords": [
         "primereact",
         "react",
@@ -26,5 +24,5 @@
         "react": "^17.0.1",
         "react-dom": "^17.0.1"
     },
-    "unpkg": "primereact.all.min.js"
+    "unpkg": "primereact_test.all.min.js"
 }

@@ -11,10 +11,10 @@ gulp.task('build-css', function () {
             'src/components/common/Common.css',
             'src/components/**/*.css'
         ])
-        .pipe(concat('primereact.css'))
+        .pipe(concat('primereact_test.css'))
         .pipe(gulp.dest('dist/resources'))
         .pipe(uglifycss({ "uglyComments": true }))
-        .pipe(rename('primereact.min.css'))
+        .pipe(rename('primereact_test.min.css'))
         .pipe(gulp.dest('dist/resources'));
 });
 

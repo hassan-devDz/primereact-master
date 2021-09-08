@@ -19,7 +19,7 @@ export class LastPageLink extends Component {
 
     render() {
         const className = classNames('p-paginator-last p-paginator-element p-link', { 'p-disabled': this.props.disabled });
-        const iconClassName = 'p-paginator-icon pi pi-angle-double-right';
+        const iconClassName = 'p-paginator-icon pi pi-angle-double-left';
         const element = (
             <button type="button" className={className} onClick={this.props.onClick} disabled={this.props.disabled}>
                 <span className={iconClassName}></span>
